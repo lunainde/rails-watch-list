@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1458053688450-eef5d21d43b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2552&q=80);">
+  <div class="text-center">
+    <h1>Movie Time!</h1>
+    <h3 class="type-js"></h3>
+    <%= link_to 'create new list', new_list_path, class: 'text text-success mt-3'%>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <% @lists.each do | list | %>
+      <div class="col-4  mt-3">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1579279263245-bbf82b50092f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80)">
+          <%= link_to list.name, list_path(list) %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
